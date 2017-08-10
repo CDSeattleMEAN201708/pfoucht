@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Animal Info</h3>
+    <h4>Name: <%=name%></h5>
+    <h4>Type: <%=type%></h5>
+    <br>
+    <h3>New Info</h3>
+    <form class="" action="/mongooses/<%=_id%>" method="post">
+      <input type="text" name="name" value="" placeholder="Animal Name">
+      <input type="text" name="type" value="" placeholder="Animal Type">
+      <input type="submit" name="" value="Update!">
+    </form>
+    <a href="/">Home</a>
+  </body>
+</html>
