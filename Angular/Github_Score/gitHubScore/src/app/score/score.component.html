@@ -1,0 +1,14 @@
+<main>
+  <h1>GitHub Score</h1>
+  <form (submit)="dataSubmit()">
+    <input type="text" name="username" value="" [(ngModel)]='username' placeholder="Github Username"> <br>
+    <input type="submit" name="" [disabled]='!username' value="Caculate my Github Score">
+  </form>
+  <div *ngIf='data.login'>
+    <h1>Your Score: {{score}}</h1>
+    <h3 *ngIf="score < 20" class="bad">Needs work!</h3>
+    <h3 *ngIf="score > 20" class="decent">Decent start!</h3>
+    <h3 *ngIf="score > 100" class="good">Good work!</h3>
+
+  </div>
+</main>
