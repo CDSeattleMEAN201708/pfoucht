@@ -1,0 +1,21 @@
+<br> <br>
+
+<div class="">
+    <button type="button" name="button"><a [routerLink]="['/lets_play']">Play!</a></button>
+    <p>Click the button above to start the trivia game</p>
+</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Score</th>
+    <th>Percentage</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{ user.name }}</td>
+    <td *ngIf="user.score">{{ user.score }}</td>
+    <td *ngIf="!user.score">0/0</td>
+    <td *ngIf="user.score">{{ user.score / 3}}</td>
+    <td *ngIf="!user.score">0%</td>
+  </tr>
+</table>

@@ -1,0 +1,42 @@
+<h4>Hello {{name}}</h4>
+<h4>Choose an answer for each of the questions and submit the test once done.</h4>
+<h4>Good luck!</h4>
+
+<form (submit)="gameSubmit()">
+
+  <div *ngIf="questions[0]">
+    <label for="">{{questions[0].question}}</label> <br>
+    <label>{{questions[0].answer}}</label>
+    <input type="radio" name="answer1" value={{questions[0].answer}} [(ngModel)]="answer1"> <br>
+    <label>{{questions[0].fake1}}</label>
+    <input type="radio" name="answer1" value={{questions[0].fake1}} [(ngModel)]="answer1"> <br>
+    <label>{{questions[0].fake2}}</label>
+    <input type="radio" name="answer1" value={{questions[0].fake2}} [(ngModel)]="answer1"> <br>
+    <p *ngIf="!answer1">Required</p> <br>
+  </div>
+
+  <div *ngIf="questions[1]">
+    <label for="">{{questions[1].question}}</label> <br>
+    <label>{{questions[1].answer}}</label>
+    <input type="radio" name="answer2" value={{questions[1].answer}} [(ngModel)]="answer2"> <br>
+    <label>{{questions[1].fake1}}</label>
+    <input type="radio" name="answer2" value={{questions[1].fake1}} [(ngModel)]="answer2"> <br>
+    <label>{{questions[1].fake2}}</label>
+    <input type="radio" name="answer2" value={{questions[1].fake2}} [(ngModel)]="answer2"> <br>
+    <p *ngIf="!answer2">Required</p> <br>
+  </div>
+
+  <div *ngIf="questions[2]">
+    <label for="">{{questions[2].question}}</label> <br>
+    <label>{{questions[2].answer}}</label>
+    <input type="radio" name="answer3" value={{questions[2].answer}} [(ngModel)]="answer3"> <br>
+    <label>{{questions[2].fake1}}</label>
+    <input type="radio" name="answer3" value={{questions[2].fake1}} [(ngModel)]="answer3"> <br>
+    <label>{{questions[2].fake2}}</label>
+    <input type="radio" name="answer3" value={{questions[2].fake2}} [(ngModel)]="answer3"> <br>
+    <p *ngIf="!answer3">Required</p> <br>
+  </div>
+
+<button type="button" name="button"><a [routerLink]="['/game', 'scores']">cancel</a></button>
+<input type="submit" name="" value="Submit">
+</form>

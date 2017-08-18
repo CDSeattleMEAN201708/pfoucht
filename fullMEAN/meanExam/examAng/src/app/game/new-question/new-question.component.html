@@ -1,0 +1,15 @@
+<h1>New Question</h1>
+
+<form #formData='ngForm' (submit)="submitQuestion()">
+  <input type="text" name="question" [(ngModel)]="q.question" required minlength="15" #question="ngModel" placeholder="Question">
+  <span *ngIf="!question.valid">Question must be at least 16 characters</span> <br>
+  <input type="text" name="answer" [(ngModel)]="q.answer" required #answer="ngModel" placeholder="Answer">
+  <span *ngIf="!answer.valid">Answer is required</span> <br>
+  <input type="text" name="fake1" [(ngModel)]="q.fake1" required #fake1="ngModel" placeholder="First fake answer">
+  <span *ngIf="!fake1.valid">Fake answer is required</span> <br>
+  <input type="text" name="fake2" [(ngModel)]="q.fake2" required #fake2="ngModel" placeholder="Second fake answer">
+  <span *ngIf="!fake2.valid">Second fake answer is required</span> <br>
+  <button type="button" name="button"><a [routerLink]="['/game', 'scores']">Cancel</a></button>
+  <input type="submit" [disabled]="!formData.valid" value="Add Question">
+
+</form>
