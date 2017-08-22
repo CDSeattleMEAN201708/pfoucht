@@ -1,0 +1,11 @@
+<h1>{{user}} ended the Bid.</h1> <br>
+<a href="/logout">Logout</a>
+<h3>Highest Bidder per Product:</h3>
+
+<div *ngFor="let i of [0,1,2]">
+  <h3>{{products[i].name}}</h3>
+  <h3>{{results[i].name}}</h3>
+  <h3>${{results[i].value}}</h3> <br> <br>
+</div>
+
+<button type="button" (click)="restart()">Start Bid</button>

@@ -1,0 +1,22 @@
+<h1>Bid Now!</h1>
+<a href="/logout">Logout</a>
+
+<main>
+  <div *ngFor="let i of [0, 1, 2]">
+    <h3>{{products[i].name}}</h3>
+    <form (submit)="isValid(i)">
+      <input type="number" name="bid" [(ngModel)]="bids[i]"  required min="1">
+      <input type="submit" name="bid" value="Bid" [disabled]="bids[i]<1">
+      <span *ngIf="!valid[i]"> <br>Bid amount should be higher than the previous bids</span>
+    </form> <br>
+    <span *ngIf="bids[i]<1">Bids are required and must be greater than 0</span>
+
+    <h5>Current Bids:</h5>
+    <div class="pastBets">
+      <p *ngFor="let bid of products[i].bids">{{bid.name }}: ${{bid.bid}} <br></p>
+      <input type="text" name="" placeholder="Search">
+    </div>
+  </div>
+
+  <button type="button" name="button" (click)="results()">End Bid</button>
+</main>
